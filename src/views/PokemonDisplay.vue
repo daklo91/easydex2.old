@@ -1,6 +1,12 @@
 <template>
   <div>
     <h1>Pokemon Display</h1>
+
+    <div v-for="(pokemon, index) in pokemons" :key="index">
+      <p>#{{ pokemon.id }} {{ pokemon.name }}</p>
+      <img :src="pokemon.sprites.front_default" alt="" />
+    </div>
+
     <PokemonItem />
   </div>
 </template>
@@ -12,6 +18,11 @@ export default {
   name: 'PokemonDisplay',
   components: {
     PokemonItem
+  },
+  computed: {
+    pokemons() {
+      return this.$store.getters.sortedPokemonArray
+    }
   }
 }
 </script>
