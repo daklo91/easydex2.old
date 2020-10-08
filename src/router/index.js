@@ -20,7 +20,7 @@ const routes = [
     component: About
   },
   {
-    path: '/pokemon-display',
+    path: '/display',
     name: 'PokemonDisplay',
     component: PokemonDisplay
   },
