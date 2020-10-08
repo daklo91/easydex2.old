@@ -81,7 +81,7 @@ export default {
         'Steel',
         'Water'
       ],
-      filterType: [],
+      filterType: '',
       weightLow: false,
       weightMed: false,
       weightHigh: false,
@@ -102,7 +102,7 @@ export default {
       let filtered = this.pokemons
 
       //sort by TYPE
-      if (this.filterType !== []) {
+      if (this.filterType) {
         filtered = filtered.filter(pokemon =>
           pokemon.types.some(type => this.filterType.includes(type.type.name))
         )
@@ -190,7 +190,7 @@ export default {
   },
   methods: {
     resetFilter() {
-      this.filterType = []
+      this.filterType = ''
       this.weightLow = false
       this.weightMed = false
       this.weightHigh = false
@@ -204,9 +204,16 @@ export default {
       console.log(this.pokemons[5].types.length)
     },
     pushTypeToFilter(type) {
-      if (this.filterType.includes(type.toLowerCase())) {
-        this.filterType.pop(type.toLowerCase())
-      } else this.filterType.push(type.toLowerCase())
+      let typeLower = type.toLowerCase()
+      if (this.filterType === '') {
+        this.filterType = []
+      }
+      if (this.filterType.includes(typeLower)) {
+        this.filterType.splice(this.filterType.indexOf(typeLower), 1)
+      } else this.filterType.push(typeLower)
+      if (this.filterType.length === 0) {
+        this.filterType = ''
+      }
     }
   }
 }
