@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>Filter</h1>
-    <button @click.prevent="consoleLogger">Console Log</button>
     <!-- TYPE Options -->
     <div>
       <div v-for="(type, index) in types" :key="index">
@@ -199,9 +198,6 @@ export default {
       this.heightHigh = false
       this.indexMin = ''
       this.indexMax = ''
-    },
-    consoleLogger() {
-      console.log(this.pokemons[5].types.length)
     },
     pushTypeToFilter(type) {
       let typeLower = type.toLowerCase()

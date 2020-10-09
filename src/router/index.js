@@ -5,6 +5,7 @@ import About from '../views/About.vue'
 import PokemonDisplay from '../views/PokemonDisplay.vue'
 import Search from '../views/Search.vue'
 import Filter from '../views/Filter.vue'
+import PokeModal from '@/components/PokeModal.vue'
 
 Vue.use(VueRouter)
 
@@ -22,7 +23,15 @@ const routes = [
   {
     path: '/display',
     name: 'PokemonDisplay',
-    component: PokemonDisplay
+    component: PokemonDisplay,
+    children: [
+      {
+        path: ':pathName',
+        component: PokeModal,
+        name: 'PokeModal',
+        props: true
+      }
+    ]
   },
   {
     path: '/search',
