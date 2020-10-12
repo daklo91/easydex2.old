@@ -2,7 +2,26 @@
 
 ## An easy to use Pokédex made with Vue 2
 
-### This project uses Vue 2, Vue-router, Vuex, axios
+## This project uses:
+
+- Vue 2
+- Vue-router
+- Vuex
+- axios
+
+## To-do
+
+High priority:
+
+- Make the site friendly for all medias
+
+Low priority:
+
+- Replace PNG files with SVG
+- Add Weakness to filter
+- Add the rest of the Pokemon
+- Add title curve
+- Add custom scrollbar
 
 ## Project setup
 

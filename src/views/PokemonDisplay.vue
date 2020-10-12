@@ -1,7 +1,11 @@
 <template>
-  <div>
+  <div class="container">
     <router-view> </router-view>
-    <h1>Pokemon Display</h1>
+
+    <div id="home-container">
+      <router-link to="/"><p class="main-font">Home</p></router-link>
+    </div>
+
     <div>
       <div v-for="(pokemon, index) in pokemons" :key="index">
         <router-link
@@ -29,4 +33,9 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+#home-container {
+  border-bottom: solid #616161 1px;
+  width: 100%;
+}
+</style>
