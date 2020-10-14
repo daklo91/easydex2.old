@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="p-4 flex flex-col items-center">
     <router-link to="/about" id="info-icon">
       <img src="@/assets/infoIcon.png" alt="Information Icon" />
     </router-link>
@@ -7,8 +7,8 @@
     <p id="sub-headline">Gotta Index 'em all!</p>
     <img src="@/assets/logo.png" alt="Pokedex Logo" id="pokedex-logo" />
 
-    <router-link to="/display">
-      <p class="main-font">Browse</p>
+    <router-link to="/display" class="flex flex-col items-center">
+      <p class="main-font text-2xl">Browse</p>
       <img
         src="@/assets/navigationArrow.png"
         alt="Navigate to Pokemon Display"
@@ -25,22 +25,15 @@ export default {
 
 <style scoped>
 #main-headline {
-  width: 200px;
-  height: 77px;
   color: #f8c822;
   font-family: 'Bangers';
   font-size: 72px;
-  font-weight: 400;
   -webkit-text-stroke: 3px #1a56c1;
 }
 
 #sub-headline {
   color: #808080;
   font-family: 'Varela Round';
-  font-size: 16px;
-  font-weight: 400;
-  margin-top: -8px;
-  margin-bottom: 35px;
 }
 
 /* #info-icon {

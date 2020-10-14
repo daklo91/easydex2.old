@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="box-content mx-auto">
+  <div id="app" class="flex items-center justify-center h-screen">
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
@@ -7,7 +7,9 @@
       <router-link to="/search">Search</router-link> |
       <router-link to="/filter">Filter</router-link>
     </div> -->
-    <div class="p-4"><router-view /></div>
+    <div id="inner-app" class="shadow-2xl">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -20,21 +22,25 @@ export default {
 </script>
 
 <style>
-#app {
+#inner-app {
   /* Standard values for a standard android. Will keep these applied to the whole app until I start developing for bigger screens */
   width: 360px;
   height: 640px;
+  background: #fff;
 }
-/* body {
+
+body {
   overflow: hidden;
+  height: 100vh;
   background: repeating-linear-gradient(
     45deg,
-    #ffffff,
-    #ffffff 10px,
+    #fff,
+    #fff 10px,
     rgb(241, 253, 255) 40px,
     rgb(241, 253, 255) 80px
   );
 }
+/*
 
 #app {
   text-align: center;
@@ -64,8 +70,6 @@ a {
 .main-font {
   color: #616161;
   font-family: 'Press Start 2P';
-  font-size: 24px;
-  font-weight: 400;
 }
 
 @font-face {
