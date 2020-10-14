@@ -7,7 +7,7 @@
       <router-link to="/search">Search</router-link> |
       <router-link to="/filter">Filter</router-link>
     </div> -->
-    <div id="inner-app" class="shadow-2xl">
+    <div id="inner-app" class="shadow-2xl overflow-auto">
       <router-view />
     </div>
   </div>

@@ -1,15 +1,16 @@
 <template>
   <div class="p-4 flex flex-col items-center">
-    <router-link to="/about" id="info-icon">
+    <router-link to="/about" id="info-icon" class="self-end p-4">
       <img src="@/assets/infoIcon.png" alt="Information Icon" />
     </router-link>
     <h1 id="main-headline">Easydex</h1>
-    <p id="sub-headline">Gotta Index 'em all!</p>
+    <p id="sub-headline" class="-mt-7 mb-8">Gotta Index 'em all!</p>
     <img src="@/assets/logo.png" alt="Pokedex Logo" id="pokedex-logo" />
 
-    <router-link to="/display" class="flex flex-col items-center">
+    <router-link to="/display" class="flex flex-col items-center mt-16">
       <p class="main-font text-2xl">Browse</p>
       <img
+        class="animate-bounce mt-2"
         src="@/assets/navigationArrow.png"
         alt="Navigate to Pokemon Display"
       />
