@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="box-content mx-auto">
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
@@ -7,7 +7,7 @@
       <router-link to="/search">Search</router-link> |
       <router-link to="/filter">Filter</router-link>
     </div> -->
-    <router-view />
+    <div class="p-4"><router-view /></div>
   </div>
 </template>
 
@@ -20,7 +20,12 @@ export default {
 </script>
 
 <style>
-body {
+#app {
+  /* Standard values for a standard android. Will keep these applied to the whole app until I start developing for bigger screens */
+  width: 360px;
+  height: 640px;
+}
+/* body {
   overflow: hidden;
   background: repeating-linear-gradient(
     45deg,
@@ -39,13 +44,6 @@ body {
   overflow: hidden;
 }
 
-.main-font {
-  color: #616161;
-  font-family: 'Press Start 2P';
-  font-size: 24px;
-  font-weight: 400;
-}
-
 .container {
   display: flex;
 
@@ -61,6 +59,13 @@ body {
 
 a {
   text-decoration: none;
+} */
+
+.main-font {
+  color: #616161;
+  font-family: 'Press Start 2P';
+  font-size: 24px;
+  font-weight: 400;
 }
 
 @font-face {
@@ -80,14 +85,13 @@ a {
     url(./fonts/VarelaRound-Regular.ttf) format('truetype');
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-.container::-webkit-scrollbar {
+/* .container::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
+
 .container {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+} */
 </style>

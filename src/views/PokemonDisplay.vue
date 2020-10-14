@@ -34,8 +34,8 @@ export default {
 </script>
 
 <style scoped>
-#home-container {
+/* #home-container {
   border-bottom: solid #616161 1px;
   width: 100%;
-}
+} */
 </style>

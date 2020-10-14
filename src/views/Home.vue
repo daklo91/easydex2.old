@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <router-link to="/about" id="info-icon">
       <img src="@/assets/infoIcon.png" alt="Information Icon" />
     </router-link>
@@ -32,7 +32,6 @@ export default {
   font-size: 72px;
   font-weight: 400;
   -webkit-text-stroke: 3px #1a56c1;
-  margin: 0;
 }
 
 #sub-headline {
@@ -44,12 +43,12 @@ export default {
   margin-bottom: 35px;
 }
 
-#info-icon {
+/* #info-icon {
   margin-top: 10px;
   margin-left: 265px;
 }
 
 #pokedex-logo {
   margin-bottom: 85px;
-}
+} */
 </style>
