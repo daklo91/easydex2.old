@@ -1,6 +1,5 @@
 <template>
   <div class="flex flex-col items-center">
-    <button @click.prevent="consoleLog">log</button>
     <router-view> </router-view>
 
     <div class="border-b-2 border-pokeGrayLight w-full text-center">
@@ -12,21 +11,21 @@
     </div>
 
     <div
-      class="color-overflow w-full h-370px m-5"
+      class="color-overflow p-5 w-full h-370px m-5"
       v-for="(pokemon, index) in pokemons"
       :key="index"
     >
-      <div class="innerDiv">
+      <div class="innerDiv ">
+        <p>#{{ pokemon.id }} {{ pokemon.name }}</p>
         <router-link
           :to="{
             name: 'PokeModal',
             params: { pathName: pokemon.name }
           }"
-          ><p>#{{ pokemon.id }} {{ pokemon.name }}</p>
-          <img
+          ><img
             :src="
               'https://assets.pokemon.com/assets/cms2/img/pokedex/full/' +
-                pokemon.id +
+                pokemonImage(pokemon.id) +
                 '.png'
             "
             :alt="'Image of ' + pokemon.name"
@@ -41,6 +40,16 @@ export default {
   computed: {
     pokemons() {
       return this.$store.getters.sortedPokemonArray
+    }
+  },
+  methods: {
+    pokemonImage(id) {
+      if (id < 10) {
+        id = '00' + id
+      } else if (id < 100) {
+        id = '0' + id
+      }
+      return id
     }
   }
 }
