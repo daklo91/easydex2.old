@@ -1,13 +1,22 @@
 <template>
-  <div class="container">
+  <div class="flex flex-col items-center">
+    <button @click.prevent="consoleLog">log</button>
     <router-view> </router-view>
 
-    <div id="home-container">
-      <router-link to="/"><p class="main-font">Home</p></router-link>
+    <div class="border-b-2 border-pokeGrayLight w-full text-center">
+      <router-link to="/"
+        ><p class="main-font m-4 text-xl">
+          Home
+        </p></router-link
+      >
     </div>
 
-    <div>
-      <div v-for="(pokemon, index) in pokemons" :key="index">
+    <div
+      class="color-overflow w-full h-370px m-5"
+      v-for="(pokemon, index) in pokemons"
+      :key="index"
+    >
+      <div class="innerDiv">
         <router-link
           :to="{
             name: 'PokeModal',
@@ -15,7 +24,11 @@
           }"
           ><p>#{{ pokemon.id }} {{ pokemon.name }}</p>
           <img
-            :src="pokemon.sprites.front_default"
+            :src="
+              'https://assets.pokemon.com/assets/cms2/img/pokedex/full/' +
+                pokemon.id +
+                '.png'
+            "
             :alt="'Image of ' + pokemon.name"
         /></router-link>
       </div>
@@ -34,8 +47,7 @@ export default {
 </script>
 
 <style scoped>
-/* #home-container {
-  border-bottom: solid #616161 1px;
-  width: 100%;
-} */
+.color-overflow {
+  background: radial-gradient(circle, #79ff4a, #ffffff);
+}
 </style>

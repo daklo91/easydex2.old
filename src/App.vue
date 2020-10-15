@@ -27,6 +27,13 @@ export default {
   width: 360px;
   height: 640px;
   background: #fff;
+  /* overflow: hidden; */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#inner-app::-webkit-scrollbar {
+  display: none;
 }
 
 body {

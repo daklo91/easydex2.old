@@ -20,6 +20,8 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
+      pokeGray: '#616161',
+      pokeGrayLight: '#929292',
       black: '#000',
       white: '#fff',
       gray: {
@@ -153,6 +155,7 @@ module.exports = {
       '48': '12rem',
       '56': '14rem',
       '64': '16rem',
+      '370px': '370px',
       px: '1px'
     },
     backgroundImage: {
