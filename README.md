@@ -12,6 +12,11 @@ An easy to use Pokédex made with Vue
 
 ### To-do
 
+- Add styling to current components
+- Create pokemon modal with stats and other information
+
+### To-do after first release
+
 ##### High priority:
 
 - Make the site friendly for all medias
