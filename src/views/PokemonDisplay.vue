@@ -9,19 +9,23 @@
         </p></router-link
       >
     </div>
-    <div class="border-b-2 border-pokeGrayLight w-full text-center">
-      <router-link to="/search"
-        ><p class="main-font m-4 text-xl">
-          Search
-        </p></router-link
+    <div class="flex w-full">
+      <div class="border-b-2 border-pokeGrayLight w-full text-center">
+        <router-link to="/search"
+          ><p class="main-font m-4 text-xl">
+            Search
+          </p></router-link
+        >
+      </div>
+      <div
+        class="border-b-2 border-l-2 border-pokeGrayLight w-full text-center"
       >
-    </div>
-    <div class="border-b-2 border-pokeGrayLight w-full text-center">
-      <router-link to="/filter"
-        ><p class="main-font m-4 text-xl">
-          Filter
-        </p></router-link
-      >
+        <router-link to="/filter"
+          ><p class="main-font m-4 text-xl">
+            Filter
+          </p></router-link
+        >
+      </div>
     </div>
     <div
       class="p-5 w-full h-370px text-center"

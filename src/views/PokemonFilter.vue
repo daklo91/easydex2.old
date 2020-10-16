@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Filter</h1>
     <!-- TYPE Options -->
     <div>
       <div v-for="(type, index) in types" :key="index">
