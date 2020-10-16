@@ -9,14 +9,42 @@
         </p></router-link
       >
     </div>
-
+    <div class="border-b-2 border-pokeGrayLight w-full text-center">
+      <router-link to="/search"
+        ><p class="main-font m-4 text-xl">
+          Search
+        </p></router-link
+      >
+    </div>
+    <div class="border-b-2 border-pokeGrayLight w-full text-center">
+      <router-link to="/filter"
+        ><p class="main-font m-4 text-xl">
+          Filter
+        </p></router-link
+      >
+    </div>
     <div
-      class="color-overflow p-5 w-full h-370px text-center"
-      v-for="(pokemon, index) in pokemons"
-      :key="index"
+      class="p-5 w-full h-370px text-center"
+      :style="{
+        background:
+          'radial-gradient(closest-side,' +
+          pokemonColorByType(pokemon.types[0].type.name) +
+          ', #ffffff)'
+      }"
+      v-for="pokemon in pokemons"
+      :key="pokemon.id"
     >
       <p class="main-font">#{{ pokemon.id }} {{ pokemon.name }}</p>
-      <div class="border-4 rounded-3xl transform scale-75 image-frame">
+      <div
+        class="border-4 rounded-3xl transform scale-75"
+        :style="{
+          background: pokemonColorByType(pokemon.types[0].type.name) + 50,
+          borderColor:
+            pokemon.types.length == 1
+              ? pokemonColorByType(pokemon.types[0].type.name)
+              : pokemonColorByType(pokemon.types[1].type.name)
+        }"
+      >
         <router-link
           :to="{
             name: 'PokeModal',
@@ -68,7 +96,7 @@ export default {
       } else if (type === 'fire') {
         color = '#f08030'
       } else if (type === 'flying') {
-        color = '#c03028'
+        color = '#a890f0'
       } else if (type === 'ghost') {
         color = '#705898'
       } else if (type === 'grass') {
@@ -88,7 +116,7 @@ export default {
       } else if (type === 'steel') {
         color = '#7b8e8a'
       } else if (type === 'water') {
-        color = '#f08030'
+        color = '#6890f0'
       }
       return color
     }
@@ -96,14 +124,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.color-overflow {
-  background: radial-gradient(closest-side, #79ff4a, #ffffff);
-}
-
-.image-frame {
-  border: solid 3px #b032e7;
-  background: rgba(106, 196, 24, 0.48);
-}
-/*79ff4a*/
-</style>
+<style scoped></style>

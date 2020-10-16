@@ -57,7 +57,7 @@
 
 <script>
 export default {
-  name: 'Filter',
+  name: 'PokemonFilter',
   data() {
     return {
       types: [

@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import PokemonDisplay from '../views/PokemonDisplay.vue'
 import Search from '../views/Search.vue'
-import Filter from '../views/Filter.vue'
+import PokemonFilter from '../views/PokemonFilter.vue'
 import PokeModal from '@/components/PokeModal.vue'
 
 Vue.use(VueRouter)
@@ -41,7 +41,7 @@ const routes = [
   {
     path: '/filter',
     name: 'Filter',
-    component: Filter
+    component: PokemonFilter
   }
 ]
 
