@@ -30,17 +30,8 @@
     <hr />
     <br />
     <!-- WEIGHT Options -->
-    <div class="flex flex-row">
-      <button @click="weightLow = !weightLow">
-        Low weight: {{ weightLow }}
-      </button>
-      <button @click="weightMed = !weightMed">
-        Medium Weight: {{ weightMed }}
-      </button>
-      <button @click="weightHigh = !weightHigh">
-        High Weight: {{ weightHigh }}
-      </button>
-    </div>
+    <WeightHeightButton @recieve="onRecieve" />
+    <div class="flex flex-row"></div>
     <br />
     <hr />
     <br />
@@ -80,8 +71,12 @@
 </template>
 
 <script>
+import WeightHeightButton from '@/components/WeightHeightButton.vue'
 export default {
   name: 'PokemonFilter',
+  components: {
+    WeightHeightButton
+  },
   data() {
     return {
       types: [
@@ -278,6 +273,21 @@ export default {
         color = '#6890f0'
       }
       return color
+    },
+    onRecieve(value) {
+      if (value === 'heightLow') {
+        this.heightLow = !this.heightLow
+      } else if (value === 'heightMed') {
+        this.heightMed = !this.heightMed
+      } else if (value === 'heightHigh') {
+        this.heightHigh = !this.heightHigh
+      } else if (value === 'weightLow') {
+        this.weightLow = !this.weightLow
+      } else if (value === 'weightMed') {
+        this.weightMed = !this.weightMed
+      } else if (value === 'weightHigh') {
+        this.weightHigh = !this.weightHigh
+      }
     }
   }
 }
